@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack using Array</title>
+</head>
+
+<body>
+    <h1>Stack using Array</h1>
+    <button onclick="pushArray()">Push</button>
+    <button onclick="popArray()">Pop</button>
+    <button onclick="peekArray()">Peek</button>
+    <div>
+        <input type="text" id="arrayInput" placeholder="Enter value">
+        <div id="arrayStack"></div>
+    </div>
+
+    <script>
+        const arrayStack = [];
+        const arrayStackDiv = document.getElementById("arrayStack");
+        const arrayInput = document.getElementById("arrayInput");
+
+        function pushArray() {
+            const value = arrayInput.value;
+            arrayStack.push(value);
+            displayArrayStack();
+            arrayInput.value = "";
+        }
+
+        function popArray() {
+            if (arrayStack.length === 0) {
+                alert("Stack is empty.");
+                return;
+            }
+            arrayStack.pop();
+            displayArrayStack();
+        }
+
+        function peekArray() {
+            if (arrayStack.length === 0) {
+                alert("Stack is empty.");
+                return;
+            }
+            alert("Top of the stack: " + arrayStack[arrayStack.length - 1]);
+        }
+
+        function displayArrayStack() {
+            arrayStackDiv.innerHTML = "Stack: " + arrayStack.join(" -> ");
+        }
+    </script>
+</body>
+
+</html>

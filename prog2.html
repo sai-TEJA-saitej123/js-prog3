@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    function addMatrices(matrix1, matrix2) {
+        const result = [];
+
+        if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+
+            return "Matrices must have the same dimensions for addition.";
+        }
+
+        for (let i = 0; i < matrix1.length; i++) {
+            const row = [];
+            for (let j = 0; j < matrix1[i].length; j++) {
+
+                row.push(matrix1[i][j] + matrix2[i][j]);
+            }
+            result.push(row);
+        }
+        return result;
+    }
+    const matrixA = [[1, 2], [3, 4]];
+    const matrixB = [[5, 6], [7, 8]];
+    const sumMatrix = addMatrices(matrixA, matrixB);
+    for (const row of sumMatrix) {
+        console.log(row);
+    }
+
+
+</script>
+
+</html>
